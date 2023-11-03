@@ -21,6 +21,8 @@ def query_customers(request):
         Q(name__startswith="I") | Q(name__startswith="N")
     )
 
-    print(cust_name)
+    # order by age, - represent descending order
+    customer_ordering = Customers.objects.order_by("-age")
+    print(customer_ordering)
 
     return HttpResponse("main")
